@@ -118,9 +118,12 @@ app.use('/api/services', serviceRoutes);
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
-
+app.get('/',(req,res)=>{
+  res.send('Backend Server is Live and Running!);
+           });
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📱 API URL: http://localhost:${PORT}/api`);
 });
+module.exports=app;
